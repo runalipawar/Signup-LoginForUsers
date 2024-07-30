@@ -3,7 +3,7 @@ from django.contrib.auth import login
 from .forms import CustomUserCreationForm
 from django.contrib.auth.forms import AuthenticationForm 
 
-def signup(request):
+def index(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
@@ -22,7 +22,7 @@ def signup(request):
             print('Form is not valid:', form.errors)
     else:
         form = CustomUserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
