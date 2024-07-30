@@ -16,15 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from hospital_app.views import signup
+from hospital_app.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', signup, name='home'),  # Set the root URL to the signup view
+    path('', index, name='home'),  
     path('hospital_app/', include('hospital_app.urls')),
 ]
 
-# Serve media files during development
 from django.conf import settings
 from django.conf.urls.static import static
 
