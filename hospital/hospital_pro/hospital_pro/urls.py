@@ -20,10 +20,11 @@ from hospital_app.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='home'),  
+    path('', index, name='home'),  # Set the root URL to the signup view
     path('hospital_app/', include('hospital_app.urls')),
 ]
 
+# Serve media files during development
 from django.conf import settings
 from django.conf.urls.static import static
 
